@@ -8,14 +8,10 @@ class Addminus extends React.Component {
         };
     }
     add = () => {
-        let nextNumber = this.state.number + 1;
-        this.setState({number: nextNumber})
-        
+        this.setState({number: this.state.number + 1})
     }
     minus = () => {
-        let nextNumber = this.state.number - 1;
-        this.setState({number: nextNumber})
-
+        this.setState({number: this.state.number - 1})
     }
     render() {
         return (
@@ -29,3 +25,4 @@ class Addminus extends React.Component {
 }
 
 export default Addminus
+
