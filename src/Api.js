@@ -13,6 +13,7 @@ class Api extends Component {
 
         )
     }
+  
     Time2() {
         return (
             <div>
@@ -26,25 +27,70 @@ class Api extends Component {
             <div>裁判</div>
         )
     }
-    Track1(){
-        return(
-            <div>
-                <div></div>
-            </div>
-        )
-    }
 
-    componentDidMount() {}
-    componentWillMount() {}
     render() {
         return (
-            <div className="header">
-                <this.Time1/>
-                <this.Judge/>
-                <this.Time2/>
-
+            <div>
+                <div className="header">
+                    <this.Time1/>
+                    <this.Judge/>
+                    <this.Time2/>
+                </div>
+                <Track1/>
+                <Track2 />
             </div>
+
         )
     }
 }
 export default Api
+
+class Track1 extends Component{
+    constructor(){
+        super()
+        let n=0;
+        this.state={
+            progress:0,
+            style:{transform :'translateX('+n+'%)'}
+        }
+        setInterval(() => {
+            n+=10;
+            this.setState({
+                style:{transform:'translateX('+n+'%)'}
+            })
+        }, 500);
+    }
+
+    render(){
+        return(
+            <div>
+                <div style={this.state.style}>兔子</div>
+                <div class="track"></div>
+            </div>
+        )
+    }
+}
+class Track2 extends Component{
+    constructor(){
+        super()
+        let n=0;
+        this.state={
+            progress:0,
+            style:{transform :'translateX('+n+'%)'}
+        }
+        setInterval(() => {
+            n+=1;
+            this.setState({
+                style:{transform:'translateX('+n+'%)'}
+            })
+        }, 500);
+    }
+    render(){
+        return(
+            <div>
+                <div style={this.state.style}>乌龟</div>
+                <div class="track"></div>
+            </div>
+        )
+    }
+}
