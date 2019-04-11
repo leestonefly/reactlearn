@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 
 
+
 class Api extends Component {
     constructor(props) {
         super(props)
@@ -13,7 +14,7 @@ class Api extends Component {
 
     success1 = () => {
         let r1 = new Date() - this.t0;
-        console.log(this)
+        
         this.setState({result1: r1})
     }
     success2 = () => {

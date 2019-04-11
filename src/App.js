@@ -24,8 +24,17 @@ class App extends Component {
             }
         ]
     }
-    handleSubmit = character =>{
-      this.setState({characters:[this.state.characters,character]})
+    onChangeHandler(event) {
+        console.log('from onChangeHandler App.js');
+        this
+            .props
+            .onChange(event.target.value);
+    }
+
+    handleSubmit = character => {
+        this.setState({
+            characters: [this.state.characters, character]
+        })
     }
     removeCharacter = index => {
         const {characters} = this.state
@@ -35,16 +44,21 @@ class App extends Component {
             })
         })
     }
-    componentDidMount(){
-       
-    }
+    componentDidMount() {}
     render() {
         return <div>
             <Addminus/>
             <Api ref="main"/>
-            <Table characterData={this.state.characters} removeCharacter={this.removeCharacter}/>
+            <Table
+                characterData={this.state.characters}
+                removeCharacter={this.removeCharacter}/>
             <Form handleSubmit ={this.handleSubmit}/>
-            <Clock />
+            <Clock/>
+            <p className="App-intro">
+                Hello, {this.props.text}
+                {' '}
+                <input onChange={this.onChangeHandler.bind(this)}></input>
+            </p>
         </div>
     }
 }
