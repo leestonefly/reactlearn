@@ -35,10 +35,13 @@ class App extends Component {
             })
         })
     }
+    componentDidMount(){
+       
+    }
     render() {
         return <div>
             <Addminus/>
-            <Api />
+            <Api ref="main"/>
             <Table characterData={this.state.characters} removeCharacter={this.removeCharacter}/>
             <Form handleSubmit ={this.handleSubmit}/>
             <Clock />

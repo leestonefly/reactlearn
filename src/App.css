@@ -53,3 +53,7 @@ table.imagetable td {
 	border-bottom: 1px solid black;
 }
 *{margin:0;padding:0;box-sizing: border-box}
+
+.play{
+	padding: 40px;
+}
