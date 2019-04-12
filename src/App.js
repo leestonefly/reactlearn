@@ -55,7 +55,7 @@ class App extends Component {
             <p className="App-intro">
                 Hello, {this.props.text}
                 
-                <button onClick={this.props.add}>添加字符</button>
+                <button onClick={this.props.add}>n后+1</button>
             </p>
         </div>
     }
