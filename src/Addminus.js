@@ -16,7 +16,7 @@ class Addminus extends React.Component {
     render() {
         return (
             <div>
-                <span>{this.state.number}</span>
+                <span>{}</span>
                 <button onClick={this.add}>+</button>
                 <button onClick={this.minus}>-</button>
             </div>

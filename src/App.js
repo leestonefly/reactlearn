@@ -24,11 +24,9 @@ class App extends Component {
             }
         ]
     }
-    onChangeHandler(event) {
-        console.log('from onChangeHandler App.js');
-        this
-            .props
-            .onChange(event.target.value);
+    onChangeHandler=(event)=>{
+        console.dir(event.target)
+        this.props.onChange(event.target.innerText);
     }
 
     handleSubmit = character => {
@@ -56,8 +54,8 @@ class App extends Component {
             <Clock/>
             <p className="App-intro">
                 Hello, {this.props.text}
-                {' '}
-                <input onChange={this.onChangeHandler.bind(this)}></input>
+                
+                <button onClick={this.props.add}>添加字符</button>
             </p>
         </div>
     }

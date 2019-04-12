@@ -6,8 +6,9 @@ import HelloReducer from './reducers/HelloReducer';
 import AppContainer from './AppContainer';
 import './index.css';
 // import App from './App'; import * as serviceWorker from './serviceWorker';
-console.log('from index.js');
-let store = createStore(HelloReducer, {text: 'Initial value from createStore'})
+
+let store = createStore(HelloReducer, {text: 'n'})
+
 ReactDOM.render(
     <Provider store={store}>
     <AppContainer/>
