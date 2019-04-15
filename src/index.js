@@ -7,7 +7,7 @@ import AppContainer from './AppContainer';
 import './index.css';
 // import App from './App'; import * as serviceWorker from './serviceWorker';
 
-let store = createStore(HelloReducer, {text: 'n'})
+let store = createStore(HelloReducer)
 
 ReactDOM.render(
     <Provider store={store}>

@@ -4,14 +4,16 @@ import App from './App';
 
 const mapStateToProps = (state) => {
   return {
-    text: state.text
+    text: state.text,
+    n:state.n
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   
-  return {
-    add:()=>dispatch({type: 'add',onChange:'+1'})
+  return {  
+    add1:()=>dispatch({type: 'add'}),
+    change:(db)=>dispatch({type:'change',payload:db})
   }
 }
 

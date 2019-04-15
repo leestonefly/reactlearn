@@ -22,11 +22,17 @@ class App extends Component {
                 name: 'Dennis',
                 job: 'Bartender'
             }
-        ]
+        ],
+        
     }
-    onChangeHandler=(event)=>{
-        console.dir(event.target)
-        this.props.onChange(event.target.innerText);
+    onChangeHandler=()=>{
+        this.props.add1();
+        this.refs.intext.value="";
+    }
+    handleChange(e){
+        let newText=e.target.value;
+        this.props.change(newText);
+        // this.props.text=e.target.value
     }
 
     handleSubmit = character => {
@@ -53,9 +59,9 @@ class App extends Component {
             <Form handleSubmit ={this.handleSubmit}/>
             <Clock/>
             <p className="App-intro">
-                Hello, {this.props.text}
-                
-                <button onClick={this.props.add}>n后+1</button>
+                Hello, {this.props.n}
+                <input type="text" ref="intext" onChange={(e)=>this.handleChange(e)}></input>
+                <button onClick={this.onChangeHandler}>n后+1</button>
             </p>
         </div>
     }
